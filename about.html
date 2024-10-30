@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - LOTWebHooks Project</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <style>
+        /* Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1e1e1e, #282828);
+            color: #e6e6e6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Styling */
+        nav {
+            text-align: center;
+            width: 100%;
+            padding: 20px 0;
+            background: rgba(30, 30, 30, 0.9);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            margin: 0 20px;
+            color: #66ff99;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #99ffd1;
+        }
+
+        /* About Section Styling */
+        .about-container {
+            background-color: #222;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 50px 20px;
+            padding: 40px;
+            text-align: center;
+            color: #e6e6e6;
+        }
+
+        /* Profile Image Styling */
+        .about-container img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .about-container img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Heading and Bio Text */
+        .about-container h1 {
+            font-size: 2.5rem;
+            color: #66ff99;
+            margin-bottom: 10px;
+        }
+
+        .about-container p {
+            font-size: 1.1rem;
+            color: #bbbbbb;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        /* Link Styling */
+        .about-container a {
+            color: #66ff99;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .about-container a:hover {
+            color: #99ffd1;
+        }
+
+        /* Bio Section */
+        .bio {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #bbbbbb;
+            max-width: 700px;
+            margin: 20px auto;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        footer a {
+            color: #66ff99;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #99ffd1;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .about-container h1 {
+                font-size: 2rem;
+            }
+
+            .about-container img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+</nav>
+
+<div class="about-container">
+    <img src="https://media.licdn.com/dms/image/v2/D4D03AQF8L8BhenHXOA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1725794027002?e=1735776000&v=beta&t=GvsktD61RmDAT4BqW8tEYMBLGK7Et0n1qF5L-9MrKb8" alt="Kamran Saifullah">
+    
+    <h1>Kamran Saifullah</h1>
+    <p><a href="https://www.linkedin.com/in/kamransaifullah/" target="_blank">LinkedIn</a></p>
+
+    <div class="bio">
+        <p>Kamran Saifullah is a passionate cybersecurity enthusiast committed to exploring the latest technologies in data protection, webhooks, and network security. His goal is to bring awareness and document techniques for proactive defenses in digital ecosystems. Driven by curiosity and a commitment to security.</p>
+    </div>
+</div>
+
+<div class="about-container">
+    <img src="https://avatars.githubusercontent.com/u/110534650?v=4" alt="Cameron Coller">
+    
+    <h1>Cameron Coller</h1>
+    <p><a href="https://media.licdn.com/dms/image/v2/D4E03AQH_me9-Ihht7Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1727822414335?e=1735776000&v=beta&t=zl2-kC4mll0Kc5Spm9gf7NReItQkz-6z7QwbgbwVzy4" target="_blank">LinkedIn</a></p>
+
+    <div class="bio">
+        <p>Cameron is a dedicated cybersecurity professional focused on practical security solutions with history in fintech, big data and managed security. With a solid track record in zero-trust architecture, threat hunting, and attack surface reduction, he’s committed to staying ahead of evolving threats and sharing techniques for proactive defence in digital spaces. Driven by a hands-on approach and a persistent curiosity for security.</p>
+    </div>
+</div>
+
+<footer>
+    Created by <a href="https://www.linkedin.com/in/kamransaifullah/" target="_blank">Kamran Saifullah</a> & <a href="https://www.linkedin.com/in/strcam/" target="_blank">Cam Coller</a>
+</footer>
+
+</body>
+</html>

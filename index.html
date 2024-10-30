@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOTWebHooks - Living Off The WebHooks</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <style>
+        /* Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1e1e1e, #282828);
+            color: #e6e6e6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Styling */
+        nav {
+            text-align: center;
+            width: 100%;
+            padding: 20px 0;
+            background: rgba(30, 30, 30, 0.9);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            margin: 0 20px;
+            color: #66ff99;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #99ffd1;
+        }
+
+        /* Header Box Styling */
+        .header-box {
+            display: flex;
+            align-items: center;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+            background: #222;
+            border-radius: 12px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.6);
+            color: #e6e6e6;
+        }
+
+        .header-box img {
+            width: 120px;
+            height: 120px;
+            border-radius: 10px;
+            margin-right: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .header-box img:hover {
+            transform: scale(1.05);
+        }
+
+        .header-box h2 {
+            font-size: 2.2rem;
+            color: #66ff99;
+            margin-bottom: 10px;
+        }
+
+        .header-box h4 {
+            color: #bbbbbb;
+            font-size: 1.1rem;
+            margin: 5px 0;
+        }
+
+        .header-box p {
+            color: #bbbbbb;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Search Box */
+        #searchBox {
+            padding: 12px;
+            width: 50%;
+            max-width: 600px;
+            margin: 30px 0;
+            border: 1px solid #444;
+            border-radius: 8px;
+            background: #333;
+            color: #e6e6e6;
+            outline: none;
+            font-size: 1rem;
+            transition: box-shadow 0.3s ease;
+        }
+
+        #searchBox:focus {
+            box-shadow: 0px 0px 10px #66ff99;
+        }
+
+        /* Table Styling */
+        table {
+            width: 90%;
+            max-width: 900px;
+            margin: 20px 0;
+            border-collapse: collapse;
+            background: #333;
+            color: #e6e6e6;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #444;
+        }
+
+        th {
+            background: #444;
+            color: #66ff99;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        tr:hover {
+            background-color: #3a3a3a;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        footer a {
+            color: #66ff99;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #99ffd1;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .header-box {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .header-box img {
+                margin: 0 0 20px 0;
+            }
+
+            #searchBox {
+                width: 80%;
+            }
+        }
+    </style>
+    <script>
+        function filterhooks() {
+            const query = document.getElementById('searchBox').value.toLowerCase();
+            const rows = document.querySelectorAll('#hooks tbody tr');
+            
+            rows.forEach(row => {
+                const commandName = row.cells[0].textContent.toLowerCase();
+                const command = row.cells[1].textContent.toLowerCase();
+                const type = row.cells[2].textContent.toLowerCase();
+                
+                if (commandName.includes(query) || command.includes(query) || type.includes(query)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+</nav>
+
+<div class="header-box">
+    <a href="https://github.com/LOTWebHooks/LOTWebhooks.github.io/blob/master/README.md">
+        <img src="assets/logo.jpg" alt="Living Off The WebHooks" width="800px">
+    </a>
+    <div>
+        <h2>Living Off The WebHooks</h2>
+        <h4>Abusing WebHooks for Data Exfiltration & C2 Communications</h4>
+        <p>
+            <strong>LOTWebHooks</strong> is a community-driven project documenting webhooks that may be exploited for data exfiltration and C2 communications. 
+            <a href="https://github.com/LOTWebHooks/LOTWebhooks.github.io/" style="color: #66ff99;">Contribution guide</a>.
+        </p>
+    </div>
+</div>
+
+<input type="text" id="searchBox" placeholder="Search for webhooks..." onkeyup="filterhooks()">
+
+<table id="hooks">
+    <thead>
+        <tr>
+            <th>Webhook Name</th>
+            <th>URL</th>
+            <th>Type</th>
+            <th>Reference</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>Webhook.site</td>
+            <td><code>webhook.site/*</code></td>
+            <td>Web</td>
+            <td>https://webhook.site/</td>
+        </tr>
+
+        <tr>
+            <td>Webhook.site</td>
+            <td><code>*@emailhook.site</code></td>
+            <td>Email</td>
+            <td>https://webhook.site/</td>
+        </tr>
+
+        <tr>
+            <td>Webhook.site</td>
+            <td><code>*.dnshook.site</code></td>
+            <td>DNS</td>
+            <td>https://webhook.site/</td>
+        </tr>
+ 
+ 
+        <tr>
+            <td>Webhook Test</td>
+            <td><code>webhook-test.com/*</code></td>
+            <td>Web</td>
+            <td>https://webhook-test.com/</td>
+        </tr>
+
+        <tr>
+            <td>Webhook Cool</td>
+            <td><code>*.webhook.cool</code></td>
+            <td>Web</td>
+            <td>https://webhook.cool/</td>
+        </tr>
+
+        <tr>
+            <td>Beeceptor</td>
+            <td><code>*.free.beeceptor.com</code></td>
+            <td>Web</td>
+            <td>https://beeceptor.com/</td>
+        </tr>
+
+        <tr>
+            <td>Beeceptor</td>
+            <td><code>*.proxy.beeceptor.com</code></td>
+            <td>Web</td>
+            <td>https://beeceptor.com/</td>
+        </tr>
+
+        <tr>
+            <td>Typed Web Hooks</td>
+            <td><code>typedwebhook.tools/*</code></td>
+            <td>Web</td>
+            <td>https://typedwebhook.tools/</td>
+        </tr>
+
+        <tr>
+            <td>Discord</td>
+            <td><code>discord.com/api/webhooks/*</code></td>
+            <td>Web</td>
+            <td>https://discord.com/</td>
+        </tr>
+
+        <tr>
+            <td>MS Teams</td>
+            <td><code>*.webhook.office.com/*</code></td>
+            <td>Web</td>
+            <td>https://teams.microsoft.com/</td>
+        </tr>
+
+        <tr>
+            <td>MS Teams</td>
+            <td><code>*.webhook.office.com/*</code></td>
+            <td>Web</td>
+            <td>https://teams.microsoft.com/</td>
+        </tr>
+
+        <tr>
+            <td>GitHub</td>
+            <td><code>github.com/{username}/{repository}/hooks/*</code></td>
+            <td>Web</td>
+            <td>https://github/</td>
+        </tr>
+
+        <tr>
+            <td>Request Catcher</td>
+            <td><code>*.requestcatcher.com</code></td>
+            <td>Web</td>
+            <td>https://requestcatcher.com/</td>
+        </tr>
+
+        <tr>
+            <td>Pipe Dream</td>
+            <td><code>*.mpipedream.net</code></td>
+            <td>Web</td>
+            <td>https://pipedream.com/</td>
+        </tr>
+
+        <tr>
+            <td>Trello</td>
+            <td><code>api.trello.com/1/tokens/{token}/webhooks/?callbackURL=*</code></td>
+            <td>Web</td>
+            <td>https://trello.com/</td>
+        </tr>
+
+        <tr>
+            <td>Slack</td>
+            <td><code>hooks.slack.com/*</code></td>
+            <td>Web</td>
+            <td>https://slack.com/</td>
+        </tr>
+
+        <tr>
+            <td>IFTTT</td>
+            <td><code>maker.ifttt.com/trigger/*</code></td>
+            <td>Web</td>
+            <td>https://ifttt.com</td>
+        </tr>
+
+        <tr>
+            <td>Webhook Relay</td>
+            <td><code>*.hooks.webhookrelay.com</code></td>
+            <td>Web</td>
+            <td>https://webhookrelay.com</td>
+        </tr>
+
+        <tr>
+            <td>Octohook</td>
+            <td><code>octo.hk/*</code></td>
+            <td>Web</td>
+            <td>https://octohook.com/</td>
+        </tr>
+
+    </tbody>
+</table>
+
+<footer>
+    Created by <a href="https://www.linkedin.com/in/kamransaifullah/" target="_blank">Kamran Saifullah</a> & <a href="https://www.linkedin.com/in/strcam/" target="_blank">Cam Coller</a>
+</footer>
+
+</body>
+</html>
