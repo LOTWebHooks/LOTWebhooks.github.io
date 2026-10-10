@@ -12,7 +12,9 @@
         /* Global Styles */
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #1e1e1e, #282828);
+            background:
+                radial-gradient(ellipse at 50% -15%, rgba(86, 231, 149, 0.12), transparent 42%),
+                linear-gradient(135deg, #1e1e1e, #282828);
             color: #e6e6e6;
             margin: 0;
             padding: 0;
@@ -36,7 +38,7 @@
 
         nav a {
             margin: 0 20px;
-            color: #66ff99;
+            color: #56e795;
             text-decoration: none;
             font-size: 1rem;
             font-weight: bold;
@@ -44,13 +46,16 @@
         }
 
         nav a:hover {
-            color: #99ffd1;
+            color: #a1ffc7;
         }
 
         /* About Section Styling */
         .about-container {
-            background-color: #222;
-            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.6);
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(86, 231, 149, 0.1), transparent 68%),
+                #222;
+            box-shadow: 0 0 30px rgba(86, 231, 149, 0.1), 0px 6px 15px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(86, 231, 149, 0.18);
             border-radius: 12px;
             max-width: 800px;
             margin: 50px 20px;
@@ -76,7 +81,7 @@
         /* Heading and Bio Text */
         .about-container h1 {
             font-size: 2.5rem;
-            color: #66ff99;
+            color: #56e795;
             margin-bottom: 10px;
         }
 
@@ -90,14 +95,14 @@
 
         /* Link Styling */
         .about-container a {
-            color: #66ff99;
+            color: #56e795;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s ease;
         }
 
         .about-container a:hover {
-            color: #99ffd1;
+            color: #a1ffc7;
         }
 
         /* Bio Section */
@@ -118,12 +123,12 @@
         }
 
         footer a {
-            color: #66ff99;
+            color: #56e795;
             text-decoration: none;
         }
 
         footer a:hover {
-            color: #99ffd1;
+            color: #a1ffc7;
         }
 
         /* Responsive Styling */
@@ -144,6 +149,7 @@
 <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
+    <a href="contributors.html">Contributors</a>
 </nav>
 
 <div class="about-container">

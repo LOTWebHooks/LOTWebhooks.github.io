@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contributors — LOTWebHooks</title>
+    <meta name="description" content="People building and maintaining the LOTWebHooks community reference.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lotwebhooks.github.io/contributors.html">
+    <meta property="og:title" content="Contributors — LOTWebHooks">
+    <meta property="og:description" content="People building and maintaining the LOTWebHooks community reference.">
+    <meta property="og:image" content="https://lotwebhooks.github.io/assets/logo.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contributors — LOTWebHooks">
+    <meta name="twitter:description" content="People building and maintaining the LOTWebHooks community reference.">
+    <meta name="twitter:image" content="https://lotwebhooks.github.io/assets/logo.jpg">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        *, *::before, *::after { box-sizing: border-box; }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            color: #fff;
+            background: #050508;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(86, 231, 149, 0.18), transparent),
+                radial-gradient(ellipse 60% 40% at 100% 50%, rgba(22, 150, 83, 0.08), transparent),
+                radial-gradient(ellipse 50% 30% at 0% 80%, rgba(86, 231, 149, 0.06), transparent),
+                linear-gradient(160deg, #000 0%, #121218 45%, #0a0a0f 100%);
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: linear-gradient(rgba(86, 231, 149, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(86, 231, 149, 0.03) 1px, transparent 1px);
+            background-size: 48px 48px;
+            mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black, transparent);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        nav {
+            text-align: center;
+            width: 100%;
+            padding: 20px 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 20;
+        }
+
+        nav a {
+            margin: 0 12px;
+            color: #56e795;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 700;
+            transition: color 0.25s ease;
+        }
+
+        nav a.github-star-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 10px;
+            border: 1px solid rgba(86, 231, 149, 0.45);
+            border-radius: 6px;
+            background: rgba(86, 231, 149, 0.1);
+        }
+
+        nav a.github-star-link:hover,
+        nav a.github-star-link:focus-visible {
+            color: #a1ffc7;
+            border-color: #a1ffc7;
+            background: rgba(86, 231, 149, 0.18);
+        }
+
+        nav a:hover, nav a.active { color: #a1ffc7; }
+
+        .page {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 48px 24px 64px;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #a1ffc7;
+            background: rgba(86, 231, 149, 0.1);
+            border: 1px solid rgba(86, 231, 149, 0.35);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            font-weight: 700;
+            margin: 0 0 12px;
+            background: linear-gradient(135deg, #fff 0%, #56e795 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            color: #aaa;
+            font-size: 1.05rem;
+            line-height: 1.65;
+            max-width: 560px;
+            margin: 0 auto 28px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .btn-primary {
+            background: #56e795;
+            color: #000;
+            box-shadow: 0 4px 20px rgba(86, 231, 149, 0.35);
+        }
+
+        .btn-primary:hover {
+            background: #a1ffc7;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(86, 231, 149, 0.45);
+        }
+
+        .btn-ghost {
+            color: #56e795;
+            border: 1px solid rgba(86, 231, 149, 0.45);
+            background: rgba(86, 231, 149, 0.06);
+        }
+
+        .btn-ghost:hover {
+            background: rgba(86, 231, 149, 0.14);
+            transform: translateY(-2px);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 22px 16px;
+            border-radius: 14px;
+            background: rgba(30, 30, 36, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(8px);
+        }
+
+        .stat-card .value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: #56e795;
+        }
+
+        .stat-card .label {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        section { margin-bottom: 48px; }
+
+        section h2 {
+            font-size: 1.15rem;
+            color: #56e795;
+            margin: 0 0 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        section h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(86, 231, 149, 0.4), transparent);
+        }
+
+        section .section-desc {
+            color: #888;
+            font-size: 0.92rem;
+            margin: 0 0 24px;
+        }
+
+        .lead-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .person-card {
+            position: relative;
+            padding: 28px 24px 24px;
+            border-radius: 16px;
+            background: linear-gradient(145deg, rgba(40, 40, 48, 0.9), rgba(24, 24, 28, 0.95));
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+            transition: border-color 0.3s ease, transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .person-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #56e795, #16824c);
+            opacity: 0.85;
+        }
+
+        .person-card:hover {
+            border-color: rgba(86, 231, 149, 0.35);
+            transform: translateY(-4px);
+        }
+
+        .person-card .avatar-wrap {
+            width: 88px;
+            height: 88px;
+            margin: 0 auto 16px;
+            border-radius: 50%;
+            padding: 3px;
+            background: linear-gradient(135deg, #56e795, #124f34);
+        }
+
+        .person-card .avatar-wrap img,
+        .person-card .avatar-wrap .avatar-fallback {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            background: #1a1a22;
+        }
+
+        .avatar-fallback {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #56e795;
+        }
+
+        .person-card h3 {
+            text-align: center;
+            margin: 0 0 4px;
+            font-size: 1.15rem;
+        }
+
+        .person-card .role {
+            text-align: center;
+            font-size: 0.82rem;
+            color: #56e795;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .person-card .bio {
+            text-align: center;
+            font-size: 0.88rem;
+            color: #aaa;
+            line-height: 1.5;
+            margin: 0 0 18px;
+        }
+
+        .person-links {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .person-links a {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #000;
+            background: rgba(86, 231, 149, 0.9);
+            padding: 8px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .person-links a.secondary {
+            background: transparent;
+            color: #56e795;
+            border: 1px solid rgba(86, 231, 149, 0.4);
+        }
+
+        .person-links a:hover { background: #a1ffc7; }
+        .person-links a.secondary:hover {
+            background: rgba(86, 231, 149, 0.12);
+            color: #a1ffc7;
+        }
+
+        .contrib-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 16px;
+        }
+
+        .contrib-card {
+            text-align: center;
+            padding: 20px 12px 16px;
+            border-radius: 14px;
+            background: rgba(28, 28, 34, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            text-decoration: none;
+            color: inherit;
+            transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+        }
+
+        .contrib-card:hover {
+            border-color: rgba(86, 231, 149, 0.4);
+            transform: translateY(-3px);
+            background: rgba(36, 36, 44, 0.95);
+        }
+
+        .contrib-card img {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 2px solid rgba(86, 231, 149, 0.35);
+        }
+
+        .contrib-card .login {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #fff;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .contrib-card .count {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: #888;
+        }
+
+        .loading, .error-msg {
+            text-align: center;
+            color: #888;
+            padding: 32px;
+            grid-column: 1 / -1;
+        }
+
+        .error-msg { color: #ff8866; }
+
+        .join-cta {
+            text-align: center;
+            padding: 36px 28px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(86, 231, 149, 0.08), rgba(22, 130, 76, 0.12));
+            border: 1px dashed rgba(86, 231, 149, 0.35);
+        }
+
+        .join-cta h2 {
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .join-cta h2::after { display: none; }
+
+        .join-cta p {
+            color: #aaa;
+            max-width: 480px;
+            margin: 0 auto 20px;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 24px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        footer a {
+            color: #56e795;
+            text-decoration: none;
+        }
+
+        footer a:hover { color: #a1ffc7; }
+
+        @media (max-width: 640px) {
+            .stats { grid-template-columns: 1fr; }
+            nav a { margin: 0 8px; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contributors.html" class="active">Contributors</a>
+    <a class="github-star-link" href="https://github.com/LOTWebHooks/LOTWebhooks.github.io" target="_blank" rel="noopener noreferrer" aria-label="Star LOTWebHooks on GitHub">★ Star on GitHub</a>
+</nav>
+
+<main class="page">
+    <header class="hero">
+        <span class="hero-badge">Community</span>
+        <h1>Contributors</h1>
+        <p>
+            LOTWebHooks is maintained by defenders and researchers who document webhook abuse paths.
+            Thank you to everyone who adds entries, fixes docs, and improves the list.
+        </p>
+        <div class="hero-actions">
+            <a class="btn btn-primary" href="https://github.com/LOTWebHooks/LOTWebhooks.github.io/blob/main/README.md" target="_blank" rel="noopener noreferrer">Contribution guide</a>
+            <a class="btn btn-ghost" href="index.html">Browse entries</a>
+        </div>
+    </header>
+
+    <div class="stats">
+        <div class="stat-card">
+            <div class="value" id="statEntries">—</div>
+            <div class="label">Catalogued entries</div>
+        </div>
+        <div class="stat-card">
+            <div class="value" id="statContributors">—</div>
+            <div class="label">GitHub contributors</div>
+        </div>
+        <div class="stat-card">
+            <div class="value" id="statCommits">—</div>
+            <div class="label">Total commits</div>
+        </div>
+    </div>
+
+    <section aria-labelledby="leads-heading">
+        <h2 id="leads-heading">Project leads</h2>
+        <p class="section-desc">Core maintainers driving the project and community outreach.</p>
+        <div class="lead-grid">
+            <article class="person-card">
+                <div class="avatar-wrap">
+                    <img src="https://avatars.githubusercontent.com/u/16836050?v=4" alt="" width="88" height="88">
+                </div>
+                <h3>Kamran Saifullah</h3>
+                <p class="role">Founder &amp; Lead Maintainer</p>
+                <p class="bio">Created LOTWebHooks to document webhook abuse paths for detection and research.</p>
+                <div class="person-links">
+                    <a href="https://www.linkedin.com/in/kamransaifullah/" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://github.com/deFr0ggy" class="secondary" target="_blank" rel="noopener">GitHub</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section aria-labelledby="github-heading">
+        <h2 id="github-heading">GitHub contributors</h2>
+        <p class="section-desc">Everyone who has committed to the repository — loaded live from GitHub.</p>
+        <div class="contrib-grid" id="contribGrid">
+            <p class="loading">Loading contributors…</p>
+        </div>
+    </section>
+
+    <section class="join-cta" aria-labelledby="join-heading">
+        <h2 id="join-heading">Join us</h2>
+        <p>Add an entry to <code style="color:#a1ffc7;font-family:JetBrains Mono,monospace;font-size:0.9em">index.html</code>, run <code style="color:#a1ffc7;font-family:JetBrains Mono,monospace;font-size:0.9em">python3 scripts/generate_csv.py</code> to refresh the downloadable CSV and entry count, then open a pull request.</p>
+        <a class="btn btn-primary" href="https://github.com/LOTWebHooks/LOTWebhooks.github.io" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        <a class="btn btn-ghost" href="data/webhooks.csv" download>Download catalog CSV</a>
+    </section>
+</main>
+
+<footer>
+    <a href="index.html">LOTWebHooks</a> · Built for defenders by <a href="https://www.linkedin.com/in/kamransaifullah/" target="_blank" rel="noopener noreferrer">Kamran Saifullah</a>
+</footer>
+<script>
+    const REPO = 'LOTWebHooks/LOTWebhooks.github.io';
+
+    async function loadStats() {
+        try {
+            const badgeRes = await fetch('data/badge.json');
+            if (badgeRes.ok) {
+                const badge = await badgeRes.json();
+                document.getElementById('statEntries').textContent = badge.message || '—';
+            }
+        } catch (_) { /* keep placeholder */ }
+
+        try {
+            const contribRes = await fetch(`https://api.github.com/repos/${REPO}/contributors?per_page=100`);
+            if (contribRes.ok) {
+                const list = await contribRes.json();
+                document.getElementById('statContributors').textContent = list.length;
+                const totalCommits = list.reduce((n, c) => n + c.contributions, 0);
+                document.getElementById('statCommits').textContent = formatNumber(totalCommits);
+                renderContributors(list);
+            } else {
+                showContribError();
+            }
+        } catch (_) {
+            showContribError();
+        }
+    }
+
+    function formatNumber(n) {
+        return n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, '') + 'k' : String(n);
+    }
+
+    function renderContributors(list) {
+        const grid = document.getElementById('contribGrid');
+        if (!list.length) {
+            grid.innerHTML = '<p class="loading">No GitHub contributors yet — be the first!</p>';
+            return;
+        }
+        grid.innerHTML = list.map(c => `
+            <a class="contrib-card" href="${escapeAttr(c.html_url)}" target="_blank" rel="noopener">
+                <img src="${escapeAttr(c.avatar_url)}" alt="" width="72" height="72" loading="lazy">
+                <span class="login">${escapeHtml(c.login)}</span>
+                <span class="count">${c.contributions} commit${c.contributions === 1 ? '' : 's'}</span>
+            </a>
+        `).join('');
+    }
+
+    function showContribError() {
+        document.getElementById('contribGrid').innerHTML =
+            '<p class="error-msg">Could not load GitHub contributors. <a href="https://github.com/LOTWebHooks/LOTWebhooks.github.io/graphs/contributors" style="color:#56e795">View on GitHub</a></p>';
+    }
+
+    function escapeHtml(s) {
+        return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function escapeAttr(s) {
+        return escapeHtml(s).replace(/'/g, '&#39;');
+    }
+
+    loadStats();
+</script>
+</body>
+</html>

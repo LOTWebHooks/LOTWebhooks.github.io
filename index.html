@@ -12,7 +12,9 @@
         /* Global Styles */
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #1e1e1e, #282828);
+            background:
+                radial-gradient(ellipse at 50% -15%, rgba(86, 231, 149, 0.12), transparent 42%),
+                linear-gradient(135deg, #1e1e1e, #282828);
             color: #e6e6e6;
             margin: 0;
             padding: 0;
@@ -36,7 +38,7 @@
 
         nav a {
             margin: 0 20px;
-            color: #66ff99;
+            color: #56e795;
             text-decoration: none;
             font-size: 1rem;
             font-weight: bold;
@@ -44,20 +46,43 @@
         }
 
         nav a:hover {
-            color: #99ffd1;
+            color: #a1ffc7;
         }
 
         /* Header Box Styling */
         .header-box {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
             display: flex;
             align-items: center;
             max-width: 900px;
             margin: 50px auto;
             padding: 30px;
-            background: #222;
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(86, 231, 149, 0.13), transparent 68%),
+                #222;
             border-radius: 12px;
-            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(86, 231, 149, 0.22);
+            box-shadow:
+                0 0 36px rgba(86, 231, 149, 0.12),
+                0px 6px 15px rgba(0, 0, 0, 0.6);
             color: #e6e6e6;
+        }
+
+        .header-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 8%;
+            right: 8%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #56e795, #a1ffc7, #56e795, transparent);
+            box-shadow: 0 0 14px 2px rgba(86, 231, 149, 0.55);
+        }
+
+        .header-box > * {
+            position: relative;
         }
 
         .header-box img {
@@ -74,7 +99,7 @@
 
         .header-box h2 {
             font-size: 2.2rem;
-            color: #66ff99;
+            color: #56e795;
             margin-bottom: 10px;
         }
 
@@ -90,12 +115,105 @@
             line-height: 1.6;
         }
 
-        /* Search Box */
+        /* Stats bar */
+        .stats-bar {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 0 10px 0;
+        }
+
+        .project-badges {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto 30px;
+        }
+
+        .project-badge {
+            box-sizing: border-box;
+            display: inline-flex;
+            align-items: stretch;
+            min-width: 0;
+            min-height: 42px;
+            overflow: hidden;
+            border: 1px solid #3c3c3c;
+            border-radius: 8px;
+            background: #333;
+            color: #e6e6e6;
+            text-decoration: none;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+        }
+
+        .project-badge-label,
+        .project-badge-value {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 12px;
+        }
+
+        .project-badge-label {
+            color: #e6e6e6;
+        }
+
+        .project-badge-value {
+            background: #56e795;
+            color: #10251a;
+            font-weight: 700;
+        }
+
+        .project-badge-download {
+            align-items: center;
+            justify-content: center;
+            padding: 9px 18px;
+            border-color: #56e795;
+            background: #56e795;
+            color: #10251a;
+            font-weight: 700;
+            transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .project-badge-download:hover,
+        .project-badge-download:focus-visible {
+            background: #a1ffc7;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(86, 231, 149, 0.25);
+        }
+
+        .stat-pill {
+            background: #2a2a2a;
+            border: 1px solid #3c3c3c;
+            color: #bbbbbb;
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+        }
+
+        .stat-pill strong {
+            color: #56e795;
+        }
+
+        /* Search + filter row */
+        .controls {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            max-width: 900px;
+            margin: 20px 0 10px 0;
+        }
+
         #searchBox {
             padding: 12px;
-            width: 50%;
+            flex: 1 1 320px;
             max-width: 600px;
-            margin: 30px 0;
             border: 1px solid #444;
             border-radius: 8px;
             background: #333;
@@ -106,7 +224,18 @@
         }
 
         #searchBox:focus {
-            box-shadow: 0px 0px 10px #66ff99;
+            box-shadow: 0px 0px 10px #56e795;
+        }
+
+        #typeFilter {
+            padding: 12px;
+            border: 1px solid #444;
+            border-radius: 8px;
+            background: #333;
+            color: #e6e6e6;
+            outline: none;
+            font-size: 1rem;
+            cursor: pointer;
         }
 
         /* Table Styling */
@@ -126,17 +255,48 @@
             padding: 15px;
             text-align: left;
             border-bottom: 1px solid #444;
+            vertical-align: top;
         }
 
         th {
             background: #444;
-            color: #66ff99;
+            color: #56e795;
             font-weight: bold;
             font-size: 1.1rem;
         }
 
         tr:hover {
             background-color: #3a3a3a;
+        }
+
+        code {
+            color: #ffcc66;
+            word-break: break-word;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .badge-web { background: rgba(86, 231, 149, 0.15); color: #56e795; }
+        .badge-email { background: rgba(102, 179, 255, 0.15); color: #66b3ff; }
+        .badge-dns { background: rgba(255, 153, 102, 0.15); color: #ff9966; }
+
+        tr.new-entry td:first-child::after {
+            content: "NEW";
+            display: inline-block;
+            margin-left: 8px;
+            font-size: 0.65rem;
+            background: #56e795;
+            color: #111;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            vertical-align: middle;
         }
 
         /* Footer Styling */
@@ -148,12 +308,12 @@
         }
 
         footer a {
-            color: #66ff99;
+            color: #56e795;
             text-decoration: none;
         }
 
         footer a:hover {
-            color: #99ffd1;
+            color: #a1ffc7;
         }
 
         /* Responsive Styling */
@@ -172,24 +332,59 @@
                 width: 80%;
             }
         }
+
+        @media (max-width: 640px) {
+            .project-badges {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .project-badge {
+                width: 100%;
+                justify-content: space-between;
+                font-size: 0.85rem;
+            }
+
+            .project-badge-label,
+            .project-badge-value {
+                padding: 8px 10px;
+            }
+
+            .project-badge-download {
+                justify-content: center;
+                padding: 8px 10px;
+                white-space: nowrap;
+            }
+        }
     </style>
     <script>
         function filterhooks() {
             const query = document.getElementById('searchBox').value.toLowerCase();
+            const typeFilter = document.getElementById('typeFilter').value.toLowerCase();
             const rows = document.querySelectorAll('#hooks tbody tr');
-            
+            let visibleCount = 0;
+
             rows.forEach(row => {
                 const commandName = row.cells[0].textContent.toLowerCase();
                 const command = row.cells[1].textContent.toLowerCase();
                 const type = row.cells[2].textContent.toLowerCase();
-                
-                if (commandName.includes(query) || command.includes(query) || type.includes(query)) {
+
+                const matchesQuery = commandName.includes(query) || command.includes(query) || type.includes(query);
+                const matchesType = typeFilter === 'all' || type.includes(typeFilter);
+
+                if (matchesQuery && matchesType) {
                     row.style.display = '';
+                    visibleCount++;
                 } else {
                     row.style.display = 'none';
                 }
             });
+
+            const counter = document.getElementById('resultCount');
+            if (counter) counter.textContent = visibleCount;
         }
+
+        window.addEventListener('DOMContentLoaded', filterhooks);
     </script>
 </head>
 <body>
@@ -197,24 +392,53 @@
 <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
+    <a href="contributors.html">Contributors</a>
 </nav>
 
 <div class="header-box">
-    <a href="https://github.com/LOTWebHooks/LOTWebhooks.github.io/blob/master/README.md">
+    <a href="https://github.com/LOTWebHooks/LOTWebhooks.github.io/blob/main/README.md">
         <img src="assets/logo.jpg" alt="Living Off The WebHooks" width="800px">
     </a>
     <div>
         <h2>Living Off The WebHooks</h2>
         <h4>Abusing WebHooks for Data Exfiltration & C2 Communications</h4>
         <p>
-            <strong>LOTWebHooks</strong> is a community-driven project documenting webhooks that may be exploited for data exfiltration and C2 communications. 
-            <a href="https://github.com/LOTWebHooks/LOTWebhooks.github.io/" style="color: #66ff99;">Contribution guide</a>.
+            <strong>LOTWebHooks</strong> is a community-driven project documenting webhooks that may be exploited for data exfiltration and C2 communications.
+            <a href="https://github.com/LOTWebHooks/LOTWebhooks.github.io/blob/main/README.md" style="color: #56e795;">Contribution guide</a>.
         </p>
     </div>
 </div>
 
-<input type="text" id="searchBox" placeholder="Search for webhooks..." onkeyup="filterhooks()">
+<div class="project-badges" aria-label="Project statistics and downloads">
+    <div class="project-badge">
+        <span class="project-badge-label">entries</span>
+        <strong class="project-badge-value" id="totalCount">0</strong>
+    </div>
+    <div class="project-badge">
+        <span class="project-badge-label">last updated</span>
+        <strong class="project-badge-value" id="lastUpdated" title="Loading latest catalog update">…</strong>
+    </div>
+    <div class="project-badge">
+        <span class="project-badge-label">contributors</span>
+        <strong class="project-badge-value" id="contributorCount" title="Loading GitHub contributors">…</strong>
+    </div>
+    <a class="project-badge project-badge-download" href="data/webhooks.csv" download aria-label="Download the webhook catalog as CSV">↓ Download CSV</a>
+</div>
 
+<div class="stats-bar">
+    <span class="stat-pill">Maps to <strong>MITRE ATT&CK T1567.004</strong></span>
+    <span class="stat-pill">Showing <strong id="resultCount">0</strong> results</span>
+</div>
+
+<div class="controls">
+    <input type="text" id="searchBox" placeholder="Search for webhooks..." onkeyup="filterhooks()">
+    <select id="typeFilter" onchange="filterhooks()">
+        <option value="all">All Types</option>
+        <option value="web">Web</option>
+        <option value="email">Email</option>
+        <option value="dns">DNS</option>
+    </select>
+</div>
 <table id="hooks">
     <thead>
         <tr>
@@ -229,142 +453,354 @@
         <tr>
             <td>Webhook.site</td>
             <td><code>webhook.site/*</code></td>
-            <td>Web</td>
+            <td><span class="badge badge-web">Web</span></td>
             <td>https://webhook.site/</td>
         </tr>
 
         <tr>
             <td>Webhook.site</td>
             <td><code>*@emailhook.site</code></td>
-            <td>Email</td>
+            <td><span class="badge badge-email">Email</span></td>
             <td>https://webhook.site/</td>
         </tr>
 
         <tr>
             <td>Webhook.site</td>
             <td><code>*.dnshook.site</code></td>
-            <td>DNS</td>
+            <td><span class="badge badge-dns">DNS</span></td>
             <td>https://webhook.site/</td>
         </tr>
- 
- 
+
         <tr>
             <td>Webhook Test</td>
             <td><code>webhook-test.com/*</code></td>
-            <td>Web</td>
+            <td><span class="badge badge-web">Web</span></td>
             <td>https://webhook-test.com/</td>
         </tr>
 
         <tr>
             <td>Webhook Cool</td>
             <td><code>*.webhook.cool</code></td>
-            <td>Web</td>
+            <td><span class="badge badge-web">Web</span></td>
             <td>https://webhook.cool/</td>
         </tr>
 
         <tr>
             <td>Beeceptor</td>
             <td><code>*.free.beeceptor.com</code></td>
-            <td>Web</td>
+            <td><span class="badge badge-web">Web</span></td>
             <td>https://beeceptor.com/</td>
         </tr>
 
         <tr>
             <td>Beeceptor</td>
             <td><code>*.proxy.beeceptor.com</code></td>
-            <td>Web</td>
+            <td><span class="badge badge-web">Web</span></td>
             <td>https://beeceptor.com/</td>
         </tr>
 
         <tr>
             <td>Typed Web Hooks</td>
             <td><code>typedwebhook.tools/*</code></td>
-            <td>Web</td>
+            <td><span class="badge badge-web">Web</span></td>
             <td>https://typedwebhook.tools/</td>
         </tr>
 
         <tr>
             <td>Discord</td>
             <td><code>discord.com/api/webhooks/*</code></td>
-            <td>Web</td>
+            <td><span class="badge badge-web">Web</span></td>
             <td>https://discord.com/</td>
         </tr>
 
         <tr>
             <td>MS Teams</td>
             <td><code>*.webhook.office.com/*</code></td>
-            <td>Web</td>
+            <td><span class="badge badge-web">Web</span></td>
             <td>https://teams.microsoft.com/</td>
         </tr>
 
         <tr>
             <td>MS Teams Workflows</td>
             <td><code>*.*.logic.azure.com/workflows/*</code></td>
-            <td>Web</td>
+            <td><span class="badge badge-web">Web</span></td>
             <td>https://www.microsoft.com/en-us/microsoft-teams/apps-and-workflows</td>
         </tr>
 
         <tr>
             <td>GitHub</td>
             <td><code>github.com/{username}/{repository}/hooks/*</code></td>
-            <td>Web</td>
-            <td>https://github/</td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>https://github.com/</td>
         </tr>
 
         <tr>
             <td>Request Catcher</td>
             <td><code>*.requestcatcher.com</code></td>
-            <td>Web</td>
+            <td><span class="badge badge-web">Web</span></td>
             <td>https://requestcatcher.com/</td>
         </tr>
 
         <tr>
             <td>Pipe Dream</td>
-            <td><code>*.mpipedream.net</code></td>
-            <td>Web</td>
+            <td><code>*.m.pipedream.net</code></td>
+            <td><span class="badge badge-web">Web</span></td>
             <td>https://pipedream.com/</td>
         </tr>
 
         <tr>
             <td>Trello</td>
             <td><code>api.trello.com/1/tokens/{token}/webhooks/?callbackURL=*</code></td>
-            <td>Web</td>
+            <td><span class="badge badge-web">Web</span></td>
             <td>https://trello.com/</td>
         </tr>
 
         <tr>
             <td>Slack</td>
             <td><code>hooks.slack.com/*</code></td>
-            <td>Web</td>
+            <td><span class="badge badge-web">Web</span></td>
             <td>https://slack.com/</td>
         </tr>
 
         <tr>
             <td>IFTTT</td>
             <td><code>maker.ifttt.com/trigger/*</code></td>
-            <td>Web</td>
+            <td><span class="badge badge-web">Web</span></td>
             <td>https://ifttt.com</td>
         </tr>
 
         <tr>
             <td>Webhook Relay</td>
             <td><code>*.hooks.webhookrelay.com</code></td>
-            <td>Web</td>
+            <td><span class="badge badge-web">Web</span></td>
             <td>https://webhookrelay.com</td>
         </tr>
 
         <tr>
             <td>Octohook</td>
             <td><code>octo.hk/*</code></td>
-            <td>Web</td>
+            <td><span class="badge badge-web">Web</span></td>
             <td>https://octohook.com/</td>
+        </tr>
+
+        <!-- Newly researched additions: documented real-world abuse -->
+
+        <tr class="new-entry">
+            <td>Telegram Bot API</td>
+            <td><code>api.telegram.org/bot{token}/sendMessage</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>Infostealers routinely use Telegram bots as a fallback/primary exfil channel alongside Discord - https://core.telegram.org/bots/api</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>n8n Webhooks</td>
+            <td><code>*.app.n8n.cloud/webhook/*</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>Cisco Talos: attacker-configured n8n webhook nodes used as a trusted-domain traffic distribution/C2 relay for malware delivery and device fingerprinting - https://blog.talosintelligence.com/the-n8n-n8mare/</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>DingTalk Robot</td>
+            <td><code>oapi.dingtalk.com/robot/send?access_token=*</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>https://open.dingtalk.com/</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>Feishu / Lark Bot</td>
+            <td><code>open.feishu.cn/open-apis/bot/v2/hook/*</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>https://open.feishu.cn/</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>WeChat Work</td>
+            <td><code>qyapi.weixin.qq.com/cgi-bin/webhook/send?key=*</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>https://work.weixin.qq.com/</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>ServerChan</td>
+            <td><code>sctapi.ftqq.com/*</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>Commonly bundled as a WeChat push relay in notification/webhook-worker tooling - https://sct.ftqq.com/</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>PushPlus</td>
+            <td><code>www.pushplus.plus/send</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>https://www.pushplus.plus/</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>Mattermost</td>
+            <td><code>{host}/hooks/*</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>Incoming webhook pattern on self-hosted/cloud Mattermost instances - https://mattermost.com/</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>Google Chat</td>
+            <td><code>chat.googleapis.com/v1/spaces/*/messages</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>https://developers.google.com/chat</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>Zapier</td>
+            <td><code>hooks.zapier.com/hooks/catch/*</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>Named alongside n8n as a workflow-automation webhook relay abused for payload delivery - https://zapier.com/</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>Make (Integromat)</td>
+            <td><code>hook.*.make.com/*</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>https://www.make.com/</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>ntfy.sh</td>
+            <td><code>ntfy.sh/*</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>Public push-notification relay reachable with a simple HTTP POST to a topic name - https://ntfy.sh/</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>Google Apps Script</td>
+            <td><code>script.google.com/macros/s/*/exec</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>Deployed web apps under a trusted google.com subdomain can relay POSTed data to attacker-controlled sinks (e.g. Sheets) - https://developers.google.com/apps-script</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>LINE Notify</td>
+            <td><code>notify-api.line.me/api/notify</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>https://notify-bot.line.me/</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>Healthchecks.io</td>
+            <td><code>hc-ping.com/*</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>Simple GET/POST "ping" endpoint, suitable as a low-bandwidth beacon channel - https://healthchecks.io/</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>Zulip</td>
+            <td><code>*.zulipchat.com/api/v1/messages</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>https://zulip.com/</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>Webex</td>
+            <td><code>webexapis.com/v1/messages</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>https://developer.webex.com/</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>PagerDuty Events API</td>
+            <td><code>events.pagerduty.com/v2/enqueue</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>https://www.pagerduty.com/</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>Flock</td>
+            <td><code>*.flock.com/hooks/sendMessage/*</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>https://flock.com/</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>Pushover</td>
+            <td><code>api.pushover.net/1/messages.json</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>https://pushover.net/</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>Gotify</td>
+            <td><code>{host}/message?token=*</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>Self-hosted push notification relay with a token-authenticated POST endpoint - https://gotify.net/</td>
         </tr>
 
     </tbody>
 </table>
 
 <footer>
-    Created by <a href="https://www.linkedin.com/in/kamransaifullah/" target="_blank">Kamran Saifullah</a> & <a href="https://www.linkedin.com/in/strcam/" target="_blank">Cam Coller</a>
+    Created by <a href="https://www.linkedin.com/in/kamransaifullah/" target="_blank" rel="noopener noreferrer">Kamran Saifullah</a>
+    <script>
+        const REPOSITORY = 'LOTWebHooks/LOTWebhooks.github.io';
+        const entryCount = document.querySelectorAll('#hooks tbody tr').length;
+        document.getElementById('totalCount').textContent = entryCount;
+
+        async function updateProjectBadges() {
+            const lastUpdated = document.getElementById('lastUpdated');
+            const contributorCount = document.getElementById('contributorCount');
+
+            const latestCommitRequest = fetch(
+                `https://api.github.com/repos/${REPOSITORY}/commits?path=index.html&per_page=1`
+            )
+                .then(response => {
+                    if (!response.ok) throw new Error(`GitHub returned ${response.status}`);
+                    return response.json();
+                })
+                .then(commits => {
+                    const date = commits[0]?.commit?.committer?.date;
+                    if (!date) throw new Error('Latest catalog commit has no date');
+                    const updatedAt = new Date(date);
+                    lastUpdated.textContent = formatRelativeDate(updatedAt);
+                    lastUpdated.title = `Catalog last updated ${updatedAt.toLocaleString()}`;
+                })
+                .catch(error => {
+                    lastUpdated.textContent = 'unavailable';
+                    lastUpdated.title = 'Could not load the latest update time from GitHub';
+                    console.error('Could not load the latest catalog update:', error);
+                });
+
+            const contributorsRequest = fetch(
+                `https://api.github.com/repos/${REPOSITORY}/contributors?per_page=100`
+            )
+                .then(response => {
+                    if (!response.ok) throw new Error(`GitHub returned ${response.status}`);
+                    return response.json();
+                })
+                .then(contributors => {
+                    contributorCount.textContent = contributors.length;
+                    contributorCount.title = `${contributors.length} GitHub contributors`;
+                })
+                .catch(error => {
+                    contributorCount.textContent = 'unavailable';
+                    contributorCount.title = 'Could not load the contributor count from GitHub';
+                    console.error('Could not load GitHub contributors:', error);
+                });
+
+            await Promise.all([latestCommitRequest, contributorsRequest]);
+        }
+
+        function formatRelativeDate(date) {
+            const elapsedDays = Math.floor((Date.now() - date.getTime()) / 86_400_000);
+            if (elapsedDays <= 0) return 'today';
+            if (elapsedDays === 1) return '1 day ago';
+            if (elapsedDays < 30) return `${elapsedDays} days ago`;
+            if (elapsedDays < 365) {
+                const months = Math.floor(elapsedDays / 30);
+                return `${months} month${months === 1 ? '' : 's'} ago`;
+            }
+            const years = Math.floor(elapsedDays / 365);
+            return `${years} year${years === 1 ? '' : 's'} ago`;
+        }
+
+        updateProjectBadges();
+    </script>
 </footer>
 
 </body>

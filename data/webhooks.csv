@@ -1,0 +1,41 @@
+name,endpoint,type,reference
+Webhook.site,webhook.site/*,Web,https://webhook.site/
+Webhook.site,*@emailhook.site,Email,https://webhook.site/
+Webhook.site,*.dnshook.site,DNS,https://webhook.site/
+Webhook Test,webhook-test.com/*,Web,https://webhook-test.com/
+Webhook Cool,*.webhook.cool,Web,https://webhook.cool/
+Beeceptor,*.free.beeceptor.com,Web,https://beeceptor.com/
+Beeceptor,*.proxy.beeceptor.com,Web,https://beeceptor.com/
+Typed Web Hooks,typedwebhook.tools/*,Web,https://typedwebhook.tools/
+Discord,discord.com/api/webhooks/*,Web,https://discord.com/
+MS Teams,*.webhook.office.com/*,Web,https://teams.microsoft.com/
+MS Teams Workflows,*.*.logic.azure.com/workflows/*,Web,https://www.microsoft.com/en-us/microsoft-teams/apps-and-workflows
+GitHub,github.com/{username}/{repository}/hooks/*,Web,https://github.com/
+Request Catcher,*.requestcatcher.com,Web,https://requestcatcher.com/
+Pipe Dream,*.m.pipedream.net,Web,https://pipedream.com/
+Trello,api.trello.com/1/tokens/{token}/webhooks/?callbackURL=*,Web,https://trello.com/
+Slack,hooks.slack.com/*,Web,https://slack.com/
+IFTTT,maker.ifttt.com/trigger/*,Web,https://ifttt.com
+Webhook Relay,*.hooks.webhookrelay.com,Web,https://webhookrelay.com
+Octohook,octo.hk/*,Web,https://octohook.com/
+Telegram Bot API,api.telegram.org/bot{token}/sendMessage,Web,Infostealers routinely use Telegram bots as a fallback/primary exfil channel alongside Discord - https://core.telegram.org/bots/api
+n8n Webhooks,*.app.n8n.cloud/webhook/*,Web,Cisco Talos: attacker-configured n8n webhook nodes used as a trusted-domain traffic distribution/C2 relay for malware delivery and device fingerprinting - https://blog.talosintelligence.com/the-n8n-n8mare/
+DingTalk Robot,oapi.dingtalk.com/robot/send?access_token=*,Web,https://open.dingtalk.com/
+Feishu / Lark Bot,open.feishu.cn/open-apis/bot/v2/hook/*,Web,https://open.feishu.cn/
+WeChat Work,qyapi.weixin.qq.com/cgi-bin/webhook/send?key=*,Web,https://work.weixin.qq.com/
+ServerChan,sctapi.ftqq.com/*,Web,Commonly bundled as a WeChat push relay in notification/webhook-worker tooling - https://sct.ftqq.com/
+PushPlus,www.pushplus.plus/send,Web,https://www.pushplus.plus/
+Mattermost,{host}/hooks/*,Web,Incoming webhook pattern on self-hosted/cloud Mattermost instances - https://mattermost.com/
+Google Chat,chat.googleapis.com/v1/spaces/*/messages,Web,https://developers.google.com/chat
+Zapier,hooks.zapier.com/hooks/catch/*,Web,Named alongside n8n as a workflow-automation webhook relay abused for payload delivery - https://zapier.com/
+Make (Integromat),hook.*.make.com/*,Web,https://www.make.com/
+ntfy.sh,ntfy.sh/*,Web,Public push-notification relay reachable with a simple HTTP POST to a topic name - https://ntfy.sh/
+Google Apps Script,script.google.com/macros/s/*/exec,Web,Deployed web apps under a trusted google.com subdomain can relay POSTed data to attacker-controlled sinks (e.g. Sheets) - https://developers.google.com/apps-script
+LINE Notify,notify-api.line.me/api/notify,Web,https://notify-bot.line.me/
+Healthchecks.io,hc-ping.com/*,Web,"Simple GET/POST ""ping"" endpoint, suitable as a low-bandwidth beacon channel - https://healthchecks.io/"
+Zulip,*.zulipchat.com/api/v1/messages,Web,https://zulip.com/
+Webex,webexapis.com/v1/messages,Web,https://developer.webex.com/
+PagerDuty Events API,events.pagerduty.com/v2/enqueue,Web,https://www.pagerduty.com/
+Flock,*.flock.com/hooks/sendMessage/*,Web,https://flock.com/
+Pushover,api.pushover.net/1/messages.json,Web,https://pushover.net/
+Gotify,{host}/message?token=*,Web,Self-hosted push notification relay with a token-authenticated POST endpoint - https://gotify.net/
