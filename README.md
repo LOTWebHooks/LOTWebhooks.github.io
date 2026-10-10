@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://lotwebhooks.github.io/">
-    <img src="./assets/logo.jpg" alt="LOTWebHooks — Living Off The WebHooks" width="180">
+    <img src="./assets/logo.png" alt="LOTWebHooks — Living Off The WebHooks" width="180">
   </a>
 </p>
 
