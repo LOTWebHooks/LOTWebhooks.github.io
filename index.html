@@ -49,6 +49,21 @@
             color: #a1ffc7;
         }
 
+        nav a.github-star-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 12px;
+            border: 1px solid rgba(86, 231, 149, 0.45);
+            border-radius: 8px;
+            background: rgba(86, 231, 149, 0.1);
+        }
+
+        nav a.github-star-link:hover,
+        nav a.github-star-link:focus-visible {
+            border-color: #a1ffc7;
+            background: rgba(86, 231, 149, 0.18);
+        }
+
         /* Header Box Styling */
         .header-box {
             position: relative;
@@ -393,6 +408,7 @@
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="contributors.html">Contributors</a>
+    <a class="github-star-link" href="https://github.com/LOTWebHooks/LOTWebhooks.github.io" target="_blank" rel="noopener noreferrer" aria-label="Star LOTWebHooks on GitHub">★ Star on GitHub</a>
 </nav>
 
 <div class="header-box">
