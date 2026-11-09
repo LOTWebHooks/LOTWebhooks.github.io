@@ -710,6 +710,41 @@
         </tr>
 
         <tr class="new-entry">
+            <td>Google Forms</td>
+            <td><code>docs.google.com/forms/d/e/*/formResponse</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>Sophos: phishing kits and malware POST stolen data to a form that aggregates responses into a Google Sheet - https://www.sophos.com/en-us/blog/phishing-and-malware-actors-abuse-google-forms-for-credentials-data-exfiltration</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>Formspree</td>
+            <td><code>formspree.io/f/*</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>Form-to-email backend used to build "serverless" phishing pages that relay harvested credentials - https://phish.report/IOK/tags/exfiltration</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>FormSubmit</td>
+            <td><code>formsubmit.co/*</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>Accepts form POSTs to formsubmit.co/{email} (or /ajax/{email}) and forwards them by email; used by serverless phishing pages - https://phish.report/IOK/tags/exfiltration</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>Getform</td>
+            <td><code>getform.io/f/*</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>Form backend tracked as a phishing-kit exfiltration indicator - https://phish.report/IOK/indicators/getform-io</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>EmailJS</td>
+            <td><code>api.emailjs.com/api/v1.0/email/send</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>Browser-side email API; seen as a second exfiltration path next to Telegram in HTML-attachment phishing kits - https://blog.gridinsoft.com/sf-express-einvoice-html-phishing-kit/</td>
+        </tr>
+
+        <tr class="new-entry">
             <td>LINE Notify</td>
             <td><code>notify-api.line.me/api/notify</code></td>
             <td><span class="badge badge-web">Web</span></td>
