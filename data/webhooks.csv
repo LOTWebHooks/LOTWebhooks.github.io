@@ -30,6 +30,11 @@ Google Chat,chat.googleapis.com/v1/spaces/*/messages,Web,https://developers.goog
 Zapier,hooks.zapier.com/hooks/catch/*,Web,Named alongside n8n as a workflow-automation webhook relay abused for payload delivery - https://zapier.com/
 Make (Integromat),hook.*.make.com/*,Web,https://www.make.com/
 ntfy.sh,ntfy.sh/*,Web,Public push-notification relay reachable with a simple HTTP POST to a topic name - https://ntfy.sh/
+Google Forms,docs.google.com/forms/d/e/*/formResponse,Web,Sophos: phishing kits and malware POST stolen data to a form that aggregates responses into a Google Sheet - https://www.sophos.com/en-us/blog/phishing-and-malware-actors-abuse-google-forms-for-credentials-data-exfiltration
+Formspree,formspree.io/f/*,Web,"Form-to-email backend used to build ""serverless"" phishing pages that relay harvested credentials - https://phish.report/IOK/tags/exfiltration"
+FormSubmit,formsubmit.co/*,Web,Accepts form POSTs to formsubmit.co/{email} (or /ajax/{email}) and forwards them by email; used by serverless phishing pages - https://phish.report/IOK/tags/exfiltration
+Getform,getform.io/f/*,Web,Form backend tracked as a phishing-kit exfiltration indicator - https://phish.report/IOK/indicators/getform-io
+EmailJS,api.emailjs.com/api/v1.0/email/send,Web,Browser-side email API; seen as a second exfiltration path next to Telegram in HTML-attachment phishing kits - https://blog.gridinsoft.com/sf-express-einvoice-html-phishing-kit/
 Google Apps Script,script.google.com/macros/s/*/exec,Web,Deployed web apps under a trusted google.com subdomain can relay POSTed data to attacker-controlled sinks (e.g. Sheets) - https://developers.google.com/apps-script
 LINE Notify,notify-api.line.me/api/notify,Web,https://notify-bot.line.me/
 Healthchecks.io,hc-ping.com/*,Web,"Simple GET/POST ""ping"" endpoint, suitable as a low-bandwidth beacon channel - https://healthchecks.io/"
