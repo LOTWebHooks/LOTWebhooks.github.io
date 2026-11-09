@@ -539,6 +539,41 @@
             <td>https://typedwebhook.tools/</td>
         </tr>
 
+        <tr class="new-entry">
+            <td>Interactsh</td>
+            <td><code>*.oast.pro, *.oast.live, *.oast.site, *.oast.online, *.oast.fun, *.oast.me</code></td>
+            <td><span class="badge badge-dns">DNS</span></td>
+            <td>Default public servers of ProjectDiscovery's interactsh-client; seen in Log4Shell callbacks and in malicious npm/PyPI packages that beacon at install or import time - https://zero.checkmarx.com/webhook-party-malicious-packages-caught-exfiltrating-data-via-legit-webhook-services-6e046b07d191</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>Interactsh</td>
+            <td><code>*.oast.pro/*, *.oast.live/*, *.oast.site/*, *.oast.online/*, *.oast.fun/*, *.oast.me/*</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>The same servers also log full HTTP(S), SMTP and LDAP interactions, so POSTed data can be read back by the operator - https://github.com/projectdiscovery/interactsh</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>Burp Collaborator</td>
+            <td><code>*.oastify.com, *.burpcollaborator.net</code></td>
+            <td><span class="badge badge-dns">DNS</span></td>
+            <td>PortSwigger's public Collaborator server (oastify.com is the current default; burpcollaborator.net still works); used by malicious npm packages for dependency-confusion exfiltration - https://safedep.io/burp-collaborator-for-dependency-confusion-attack</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>Burp Collaborator</td>
+            <td><code>*.oastify.com/*, *.burpcollaborator.net/*</code></td>
+            <td><span class="badge badge-web">Web</span></td>
+            <td>HTTP(S) and SMTP interactions are captured and shown to whoever generated the payload - https://portswigger.net/burp/documentation/desktop/tools/collaborator-client</td>
+        </tr>
+
+        <tr class="new-entry">
+            <td>DNSLog.cn</td>
+            <td><code>*.dnslog.cn</code></td>
+            <td><span class="badge badge-dns">DNS</span></td>
+            <td>Free DNS lookup logger; listed among the callback domains seen in Log4Shell scanning and exfiltration - https://www.bleepingcomputer.com/news/security/hackers-start-pushing-malware-in-worldwide-log4shell-attacks/</td>
+        </tr>
+
         <tr>
             <td>Discord</td>
             <td><code>discord.com/api/webhooks/*</code></td>

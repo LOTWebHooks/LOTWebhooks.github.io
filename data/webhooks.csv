@@ -7,6 +7,11 @@ Webhook Cool,*.webhook.cool,Web,https://webhook.cool/
 Beeceptor,*.free.beeceptor.com,Web,https://beeceptor.com/
 Beeceptor,*.proxy.beeceptor.com,Web,https://beeceptor.com/
 Typed Web Hooks,typedwebhook.tools/*,Web,https://typedwebhook.tools/
+Interactsh,"*.oast.pro, *.oast.live, *.oast.site, *.oast.online, *.oast.fun, *.oast.me",DNS,Default public servers of ProjectDiscovery's interactsh-client; seen in Log4Shell callbacks and in malicious npm/PyPI packages that beacon at install or import time - https://zero.checkmarx.com/webhook-party-malicious-packages-caught-exfiltrating-data-via-legit-webhook-services-6e046b07d191
+Interactsh,"*.oast.pro/*, *.oast.live/*, *.oast.site/*, *.oast.online/*, *.oast.fun/*, *.oast.me/*",Web,"The same servers also log full HTTP(S), SMTP and LDAP interactions, so POSTed data can be read back by the operator - https://github.com/projectdiscovery/interactsh"
+Burp Collaborator,"*.oastify.com, *.burpcollaborator.net",DNS,PortSwigger's public Collaborator server (oastify.com is the current default; burpcollaborator.net still works); used by malicious npm packages for dependency-confusion exfiltration - https://safedep.io/burp-collaborator-for-dependency-confusion-attack
+Burp Collaborator,"*.oastify.com/*, *.burpcollaborator.net/*",Web,HTTP(S) and SMTP interactions are captured and shown to whoever generated the payload - https://portswigger.net/burp/documentation/desktop/tools/collaborator-client
+DNSLog.cn,*.dnslog.cn,DNS,Free DNS lookup logger; listed among the callback domains seen in Log4Shell scanning and exfiltration - https://www.bleepingcomputer.com/news/security/hackers-start-pushing-malware-in-worldwide-log4shell-attacks/
 Discord,discord.com/api/webhooks/*,Web,https://discord.com/
 MS Teams,*.webhook.office.com/*,Web,https://teams.microsoft.com/
 MS Teams Workflows,*.*.logic.azure.com/workflows/*,Web,https://www.microsoft.com/en-us/microsoft-teams/apps-and-workflows
