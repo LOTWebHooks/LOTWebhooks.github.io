@@ -39,3 +39,6 @@ PagerDuty Events API,events.pagerduty.com/v2/enqueue,Web,https://www.pagerduty.c
 Flock,*.flock.com/hooks/sendMessage/*,Web,https://flock.com/
 Pushover,api.pushover.net/1/messages.json,Web,https://pushover.net/
 Gotify,{host}/message?token=*,Web,Self-hosted push notification relay with a token-authenticated POST endpoint - https://gotify.net/
+MS Teams Workflows (Power Automate),*.environment.api.powerplatform.com/powerautomate/automations/direct/workflows/*,Web,"New host for Teams Workflows and HTTP-trigger flow URLs, replacing logic.azure.com from August 2025 (Microsoft MC1183710) - https://blog-en.topedia.com/2025/10/http-and-teams-webhook-trigger-urls-must-be-updated-in-power-automate-and-copilot-studio-agent-flows/"
+Firebase Realtime Database,"*.firebaseio.com, *.firebasedatabase.app",Web,REST-writable JSON database; the FireScam Android infostealer exfiltrates to a *-default-rtdb.firebaseio.com instance - https://securityaffairs.com/172656/malware/firescam-android-malware.html
+AWS Lambda Function URLs,*.lambda-url.*.on.aws,Web,Unit 42: the HazyBeacon backdoor beacons to an attacker-controlled Lambda Function URL for C2 and exfiltration - https://unit42.paloaltonetworks.com/windows-backdoor-for-novel-c2-communication/
