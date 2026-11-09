@@ -547,17 +547,17 @@
         </tr>
 
         <tr>
-            <td>MS Teams</td>
+            <td>MS Teams (Office 365 connectors, retired)</td>
             <td><code>*.webhook.office.com/*</code></td>
             <td><span class="badge badge-web">Web</span></td>
-            <td>https://teams.microsoft.com/</td>
+            <td>Legacy Incoming Webhook connector URLs; Microsoft switched off Office 365 connectors in Teams on 18-22 May 2026, so new hits point to stale tooling, and the pattern stays useful for historical log hunting - https://devblogs.microsoft.com/microsoft365dev/retirement-of-office-365-connectors-within-microsoft-teams/</td>
         </tr>
 
         <tr>
-            <td>MS Teams Workflows</td>
+            <td>Azure Logic Apps (formerly MS Teams Workflows)</td>
             <td><code>*.*.logic.azure.com/workflows/*</code></td>
             <td><span class="badge badge-web">Web</span></td>
-            <td>https://www.microsoft.com/en-us/microsoft-teams/apps-and-workflows</td>
+            <td>Request-trigger callback URLs of Azure Logic Apps. Power Automate and Teams Workflows URLs on this host were retired on 30 November 2025 (MC1183710) and replaced by *.environment.api.powerplatform.com - https://learn.microsoft.com/azure/logic-apps/logic-apps-http-endpoint</td>
         </tr>
 
         <tr>
@@ -620,9 +620,9 @@
 
         <tr class="new-entry">
             <td>Telegram Bot API</td>
-            <td><code>api.telegram.org/bot{token}/sendMessage</code></td>
+            <td><code>api.telegram.org/bot{token}/*</code></td>
             <td><span class="badge badge-web">Web</span></td>
-            <td>Infostealers routinely use Telegram bots as a fallback/primary exfil channel alongside Discord - https://core.telegram.org/bots/api</td>
+            <td>Infostealers routinely use Telegram bots as a fallback/primary exfil channel alongside Discord; text goes out via sendMessage and stolen files/archives via sendDocument - https://blog.nviso.eu/2025/12/16/the-detection-response-chronicles-exploring-telegram-abuse/</td>
         </tr>
 
         <tr class="new-entry">
@@ -710,10 +710,10 @@
         </tr>
 
         <tr class="new-entry">
-            <td>LINE Notify</td>
+            <td>LINE Notify (discontinued)</td>
             <td><code>notify-api.line.me/api/notify</code></td>
             <td><span class="badge badge-web">Web</span></td>
-            <td>https://notify-bot.line.me/</td>
+            <td>Service shut down on 31 March 2025 and all APIs stopped working on 1 April 2025; kept for historical log hunting. Its successor is the LINE Messaging API (api.line.me) - https://developers.line.biz/en/news/tags/end-of-life/</td>
         </tr>
 
         <tr class="new-entry">
